@@ -1,0 +1,384 @@
+/* ========================================
+   Reset & Base
+   ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-color: #ffffff;
+  color: #000000;
+  line-height: 1.6;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+
+  /* Page enter animation */
+  opacity: 0;
+  animation: pageEnter 0.4s ease forwards;
+}
+
+@keyframes pageEnter {
+  to { opacity: 1; }
+}
+
+/* Page leave (triggered by JS on nav click) */
+body.page-leave {
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+/* ========================================
+   Scroll Reveal Animation
+   ======================================== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduce motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; opacity: 1; }
+  body.page-leave { transition: none; }
+  .scroll-reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ========================================
+   Navigation (top right)
+   ======================================== */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 28px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+nav a {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a.active {
+  font-weight: bold;
+}
+
+/* ========================================
+   Page Container
+   ======================================== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 40px 100px;
+}
+
+/* ========================================
+   Justified Text
+   ======================================== */
+.hero-content p,
+.entry-summary,
+.entry-details li,
+.education-item .ed-skills,
+main > p {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* ========================================
+   Home Page - Hero
+   ======================================== */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  margin-bottom: 100px;
+}
+
+.hero-photo {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background-color: #f0f0f0;
+  border: 1px solid #e5e5e5;
+}
+
+.hero-content h1 {
+  font-size: 52px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.hero-tagline {
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 28px;
+  color: #333;
+}
+
+.hero-content h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.hero-content p {
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+/* ========================================
+   Sections (Education, Skills)
+   ======================================== */
+.section {
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 32px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #000;
+}
+
+/* Education - horizontal layout */
+.education-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.education-item {
+  flex: 1;
+  min-width: 240px;
+}
+
+.education-item h3 {
+  font-size: 19px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.education-item .school {
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.education-item .date {
+  font-size: 15px;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.education-item .ed-skills {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Skills - two columns */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+
+.skills-column h3 {
+  font-size: 19px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.skills-column ul {
+  list-style: none;
+}
+
+.skills-column li {
+  padding: 5px 0;
+  font-size: 16px;
+}
+
+/* Languages & Interests row */
+.misc-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
+}
+
+.misc-row > div {
+  flex: 1;
+  min-width: 240px;
+}
+
+.misc-row h3 {
+  font-size: 19px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.misc-row p {
+  font-size: 16px;
+}
+
+/* ========================================
+   Work / Project Entries
+   ======================================== */
+.page-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #000;
+}
+
+.entry {
+  margin-bottom: 55px;
+}
+
+.entry-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.entry-company {
+  font-size: 19px;
+  font-weight: normal;
+  margin-bottom: 12px;
+}
+
+.entry-summary {
+  font-size: 17px;
+  margin-bottom: 16px;
+}
+
+.entry-summary.underlined {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.entry-details {
+  list-style: none;
+  padding-left: 0;
+}
+
+.entry-details li {
+  font-size: 15px;
+  margin-bottom: 12px;
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.7;
+}
+
+.entry-details li::before {
+  content: "•";
+  position: absolute;
+  left: 4px;
+  font-size: 16px;
+}
+
+.entry-details strong {
+  font-weight: bold;
+}
+
+/* ========================================
+   Contact Page
+   ======================================== */
+.contact-list {
+  list-style: none;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.contact-list li {
+  margin-bottom: 18px;
+  display: flex;
+  gap: 16px;
+}
+
+.contact-list .label {
+  font-weight: bold;
+  min-width: 110px;
+}
+
+.contact-list a {
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 768px) {
+  nav {
+    justify-content: center;
+    padding: 24px 20px;
+  }
+
+  nav ul {
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .container {
+    padding: 30px 24px 80px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+    margin-bottom: 70px;
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  .skills-grid,
+  .misc-row {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .page-title {
+    font-size: 26px;
+  }
+
+  .entry-title {
+    font-size: 20px;
+  }
+}
