@@ -10,9 +10,9 @@
 
   <nav>
     <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="work.html">Professional Experiences</a></li>
-      <li><a href="projects.html">Projects</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work Experience</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -21,24 +21,113 @@
 
     <h1 class="page-title scroll-reveal">Projects</h1>
 
-    <!-- Project 1: XAG -->
-    <article class="entry scroll-reveal">
-      <h2 class="entry-title">AgriTech Investment Analysis: XAG (Agricultural Drone Company)</h2>
-      <p class="entry-summary">A full investment evaluation of XAG, combining financial modelling, competitive benchmarking, and ESG impact analysis to support investment decision-making.</p>
-      <ul class="entry-details">
-        <li><strong>Investment Thesis:</strong> Conducted a full investment evaluation of XAG, focusing on its role and growth potential within the precision agriculture market.</li>
-        <li><strong>Market Analysis:</strong> Analyzed industry growth trends and estimated market potential using publicly available data and industry reports, identifying key demand drivers and adoption barriers.</li>
-        <li><strong>Financial Modelling:</strong> Built a 5-year financial projection model to assess revenue growth, profitability, and scalability under multiple operating scenarios.</li>
-        <li><strong>Competitive Benchmarking:</strong> Performed competitive benchmarking against DJI, identifying strategic positioning, product differentiation, and defensible market segments.</li>
-        <li><strong>ESG Assessment:</strong> Evaluated ESG impact, including environmental efficiency gains and broader implications for sustainable agriculture investment.</li>
-        <li><strong>Deliverable:</strong> Synthesized findings into an investment-style memo presenting the recommendation and supporting analysis to inform decision-making.</li>
-      </ul>
-    </article>
+    <!-- Tab buttons -->
+    <div class="tabs scroll-reveal" role="tablist">
+      <button class="tab-button active" data-tab="data" role="tab">Data Projects</button>
+      <button class="tab-button" data-tab="finance" role="tab">Finance Projects</button>
+      <button class="tab-button" data-tab="risk" role="tab">Risk-Related Projects</button>
+    </div>
 
-    <!--
-      To add another project, copy the <article class="entry scroll-reveal">...</article>
-      block above and update the title, summary, and bullet points.
-    -->
+    <!-- ============================
+         Tab Panel 1: Data Projects
+         ============================ -->
+    <div class="tab-panel active" id="data" role="tabpanel">
+
+      <article class="entry">
+        <div class="entry-header">
+          <h2 class="entry-title">Customer Churn Prediction with Machine Learning</h2>
+        </div>
+        <p class="entry-summary">Built and benchmarked classification models to predict customer churn for a telecom dataset, identifying key behavioral drivers and quantifying retention impact.</p>
+        <ul class="entry-details">
+          <li><strong>Data Pipeline:</strong> Cleaned and preprocessed a 10k+ customer dataset using <strong>Python</strong> (<strong>Pandas</strong>, <strong>NumPy</strong>), engineering features from usage patterns, contract terms, and service interactions.</li>
+          <li><strong>Modelling:</strong> Trained and compared <strong>Logistic Regression</strong>, <strong>Random Forest</strong>, and <strong>XGBoost</strong> classifiers; tuned hyperparameters via cross-validation to optimize <strong>ROC-AUC</strong> and recall on the minority class.</li>
+          <li><strong>Interpretation:</strong> Used <strong>SHAP values</strong> to identify the top predictors of churn and translated findings into business-facing recommendations on retention strategy.</li>
+          <li><strong>Outcome:</strong> Final model achieved AUC of [XX], with feature-level insights summarized in a one-page executive memo.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-header">
+          <h2 class="entry-title">End-to-End Reporting Automation Pipeline</h2>
+        </div>
+        <p class="entry-summary">Designed an end-to-end automated reporting pipeline that ingests multi-source operational data and refreshes a Power BI dashboard with no manual intervention.</p>
+        <ul class="entry-details">
+          <li><strong>Architecture:</strong> Built an <strong>ETL pipeline</strong> with <strong>Python</strong> and <strong>Power Query</strong> to ingest data from <strong>REST APIs</strong>, <strong>JSON</strong> files, and CSV exports, applying schema alignment and validation rules.</li>
+          <li><strong>Visualization:</strong> Designed an interactive <strong>Power BI</strong> dashboard with custom <strong>DAX</strong> measures, drill-through pages, and role-level access for different stakeholder groups.</li>
+          <li><strong>Automation:</strong> Configured <strong>Power Automate</strong> flows for scheduled refreshes, anomaly alerts, and approval workflows, removing recurring manual reporting work.</li>
+          <li><strong>Outcome:</strong> Reduced weekly reporting effort by [XX] hours and standardized KPI definitions across the team.</li>
+        </ul>
+      </article>
+
+    </div>
+
+    <!-- ============================
+         Tab Panel 2: Finance Projects
+         ============================ -->
+    <div class="tab-panel" id="finance" role="tabpanel">
+
+      <article class="entry">
+        <div class="entry-header">
+          <h2 class="entry-title">AgriTech Investment Analysis: XAG (Agricultural Drone Company)</h2>
+        </div>
+        <p class="entry-summary">A full investment evaluation of XAG, combining financial modelling, competitive benchmarking, and ESG impact analysis to support investment decision-making.</p>
+        <ul class="entry-details">
+          <li><strong>Investment Thesis:</strong> Conducted a full investment evaluation of XAG, focusing on its role and growth potential within the precision agriculture market.</li>
+          <li><strong>Market Analysis:</strong> Analyzed industry growth trends and estimated market potential using publicly available data and industry reports, identifying key demand drivers and adoption barriers.</li>
+          <li><strong>Financial Modelling:</strong> Built a <strong>5-year financial projection model</strong> to assess revenue growth, profitability, and scalability under multiple operating scenarios.</li>
+          <li><strong>Competitive Benchmarking:</strong> Performed competitive benchmarking against <strong>DJI</strong>, identifying strategic positioning, product differentiation, and defensible market segments.</li>
+          <li><strong>ESG Assessment:</strong> Evaluated <strong>ESG impact</strong>, including environmental efficiency gains and broader implications for sustainable agriculture investment.</li>
+          <li><strong>Deliverable:</strong> Synthesized findings into an investment-style memo presenting the recommendation and supporting analysis to inform decision-making.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-header">
+          <h2 class="entry-title">Equity Valuation: DCF &amp; Comparable Company Analysis</h2>
+        </div>
+        <p class="entry-summary">Built a full valuation framework for a listed company combining intrinsic and relative valuation methods to derive a target share price range.</p>
+        <ul class="entry-details">
+          <li><strong>Financial Modelling:</strong> Constructed a <strong>3-statement model</strong> (income statement, balance sheet, cash flow) with linked drivers, and projected <strong>5 years</strong> of forward financials.</li>
+          <li><strong>DCF Valuation:</strong> Performed a <strong>discounted cash flow</strong> analysis with <strong>WACC</strong> sensitivity and terminal-value scenarios using both Gordon growth and exit-multiple methods.</li>
+          <li><strong>Comparable Analysis:</strong> Selected a peer group and applied <strong>EV/EBITDA</strong>, <strong>P/E</strong>, and <strong>P/B</strong> multiples to derive a relative valuation range.</li>
+          <li><strong>Output:</strong> Synthesized intrinsic and relative valuations into a target price band and produced a one-page investment summary.</li>
+        </ul>
+      </article>
+
+    </div>
+
+    <!-- ============================
+         Tab Panel 3: Risk Projects
+         ============================ -->
+    <div class="tab-panel" id="risk" role="tabpanel">
+
+      <article class="entry">
+        <div class="entry-header">
+          <h2 class="entry-title">Credit Risk Modelling: PD Estimation with Logistic Regression</h2>
+        </div>
+        <p class="entry-summary">Developed a Probability-of-Default model for a portfolio of corporate clients, benchmarking it against tree-based alternatives and validating discriminatory power.</p>
+        <ul class="entry-details">
+          <li><strong>Data Preparation:</strong> Constructed a borrower-level dataset with financial ratios, leverage, liquidity, and macroeconomic indicators; handled missing values and outliers using <strong>WoE binning</strong>.</li>
+          <li><strong>Modelling:</strong> Estimated a <strong>logistic regression</strong> PD model and compared it with <strong>Random Forest</strong> and <strong>XGBoost</strong> benchmarks to assess discriminatory power.</li>
+          <li><strong>Validation:</strong> Evaluated model performance using <strong>ROC-AUC</strong>, <strong>KS statistic</strong>, and <strong>Gini coefficient</strong>; tested calibration and stability over time.</li>
+          <li><strong>Stress Testing:</strong> Applied scenario-based <strong>stress tests</strong> to assess PD sensitivity under adverse macro conditions.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-header">
+          <h2 class="entry-title">Market Risk: Value-at-Risk &amp; Expected Shortfall Backtesting</h2>
+        </div>
+        <p class="entry-summary">Implemented and backtested multiple VaR and Expected Shortfall methodologies on a multi-asset portfolio to compare model accuracy under different market regimes.</p>
+        <ul class="entry-details">
+          <li><strong>Methodology:</strong> Implemented <strong>Historical Simulation</strong>, <strong>Variance-Covariance</strong>, and <strong>Monte Carlo</strong> VaR at the 95% and 99% confidence levels using <strong>Python</strong>.</li>
+          <li><strong>Volatility Modelling:</strong> Modelled time-varying volatility with <strong>GARCH(1,1)</strong> and <strong>EWMA</strong> to capture clustering effects in returns.</li>
+          <li><strong>Backtesting:</strong> Evaluated VaR exceedances using <strong>Kupiec</strong> and <strong>Christoffersen</strong> tests; computed <strong>Expected Shortfall</strong> as a coherent tail-risk measure.</li>
+          <li><strong>Insight:</strong> Quantified differences in model performance during calm and stressed periods, with results visualized in a comparison dashboard.</li>
+        </ul>
+      </article>
+
+    </div>
 
   </main>
 

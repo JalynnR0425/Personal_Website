@@ -39,3 +39,38 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
   }, 150);
 });
+
+/* ========================================
+   Project Tabs (click to switch category)
+   ======================================== */
+window.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('.tab-button');
+  const panels = document.querySelectorAll('.tab-panel');
+
+  if (!buttons.length) return;
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      if (!target) return;
+
+      // Update buttons
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Update panels
+      panels.forEach(panel => {
+        if (panel.id === target) {
+          panel.classList.add('active');
+
+          // Re-trigger scroll-reveal for newly shown content
+          panel.querySelectorAll('.scroll-reveal').forEach(el => {
+            el.classList.add('visible');
+          });
+        } else {
+          panel.classList.remove('active');
+        }
+      });
+    });
+  });
+});
