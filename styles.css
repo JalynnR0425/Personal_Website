@@ -568,3 +568,75 @@ main > p {
     padding: 12px 16px;
   }
 }
+/* ========================================
+   Nested sub-list inside entry-details
+   ======================================== */
+.entry-details .sub-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.entry-details .sub-list li {
+  font-size: 15px;
+  margin-bottom: 6px;
+  padding-left: 20px;
+  line-height: 1.65;
+}
+
+.entry-details .sub-list li::before {
+  content: "◦";
+  position: absolute;
+  left: 6px;
+  font-size: 14px;
+}
+
+/* ========================================
+   Skill tags row at bottom of entry
+   ======================================== */
+.entry-tags {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed #ccc;
+}
+
+.entry-tags .tag-row {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
+
+/* ========================================
+   Reference block
+   ======================================== */
+.entry-reference {
+  margin-top: 18px;
+  padding: 14px 18px;
+  background-color: #fafafa;
+  border-left: 3px solid #000;
+}
+
+.entry-reference .ref-label {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.entry-reference .ref-person {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.entry-reference .ref-link {
+  font-size: 15px;
+}
+
+.entry-reference .ref-link a {
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.entry-reference .ref-link a:hover {
+  opacity: 0.6;
+}
